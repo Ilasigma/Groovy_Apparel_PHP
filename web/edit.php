@@ -1,5 +1,4 @@
 <?php
-//Database Connection
 include('config.php');
 if(isset($_POST['submit']))
 {
@@ -11,7 +10,6 @@ if(isset($_POST['submit']))
     $country=$_POST['country'];
     $zip=$_POST['zip'];
     $phone=$_POST['phone'];
-//echo "update  address set UserAddress='$add',UserCity='$city', UserState='$state', UserCountry='$country', UserZip='$zip', UserPhone='$phone',where AddressID='$eid'";exit;
     //Query for data updation
     $query=mysqli_query($con, "update  address set UserAddress='$add',UserCity='$city', UserState='$state', UserCountry='$country', UserZip='$zip', UserPhone='$phone' where AddressID='$eid'");
 

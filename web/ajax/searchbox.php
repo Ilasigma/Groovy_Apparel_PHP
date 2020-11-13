@@ -14,4 +14,3 @@ if (!empty($_POST["keyword"])) {
         } ?>
     </ul>
 <?php } ?>
-

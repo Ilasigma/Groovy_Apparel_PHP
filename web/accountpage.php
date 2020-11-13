@@ -1,6 +1,5 @@
 <?php
 session_start();
-//database connection  file
 include('config.php');
 
 //Code for deletion

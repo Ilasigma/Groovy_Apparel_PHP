@@ -1,5 +1,4 @@
 <?php
-//Databse Connection file
 include('config.php');
 if(isset($_POST['submit']))
 {
@@ -10,10 +9,6 @@ if(isset($_POST['submit']))
     $country=$_POST['country'];
     $zip=$_POST['zip'];
     $phone=$_POST['phone'];
-//	  print_r($_POST);
-//	echo "insert into tblusers(FirstName,LastName, MobileNumber, country, skill,  Address) value('$fname','$lname', '$contno', '$country', '$skill', '$add' )";
-//	    exit;
-
     // Query for data insertion
     $query=mysqli_query($con, "insert into address(UserAddress,UserCity, UserState, UserCountry, UserZip,  UserPhone) value('$add','$city', '$state', '$country', '$zip', '$phone' )");
     if ($query) {

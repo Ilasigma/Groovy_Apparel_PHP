@@ -7,7 +7,6 @@ $query = mysqli_query($con, "INSERT INTO `newsletter`(`email_id`) VALUES ('$emai
 
 echo "<script>alert('You have successfully subscribed');</script>";
 echo "<script>window.location.href = '".$_SERVER['HTTP_REFERER']."'</script>"; // HTTP_REFERER - Give us previous page URL
-//echo "<script>window.location.href = 'http://php.local.com/web/womens.php'</script>";
 
 // Send email
 $subjectStr = 'Subscription Successfully!!';

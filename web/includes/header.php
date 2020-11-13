@@ -2,20 +2,16 @@
 session_start();
 
 //-------------Login user can access only------------
-/*echo "<pre>";print_r($_SESSION);
-exit;*/
+
 $word = "index.php"; // Varibale to check for home page condition...
 $string = $_SERVER['REQUEST_URI']; // Get the current URL
 $homepage = "/web/";   // To check other home page scenarios
-//echo $string;
-//exit;
 /*if(strpos($string, $word) == false){
     echo "Word Found!";
 } else{
     echo "Word Not Found!";
 }
-exit;*/
-
+*/
 /**
  * isset($_SESSION['user_id'] => To check user is login or not using session....
  * strpos($string, $word) == false => To check/compare index.php exist in Request URL or not

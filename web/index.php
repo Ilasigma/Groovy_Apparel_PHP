@@ -1,10 +1,6 @@
 <?php
 session_start();
-//ini_set('display_errors', 1);
-//ini_set('display_startup_errors', 1);
-//error_reporting(E_ALL);
 include('config.php');
-
 
 if (isset($_POST['submit'])) {
     $fname = trim($_POST['fName']);
@@ -50,8 +46,6 @@ if (isset($_POST['submit'])) {
 //--------------------Registration-----------
     $ret = mysqli_query($con, "select * from users where UserEmail='$email' || UserPhone='$phone'");
     $result = mysqli_fetch_array($ret);
-
-//    echo "INSERT INTO users(`UserEmail`, `UserPassword`, `UserFirstName`, `UserLastName`, `UserPhone`, `Document`) VALUES ('$email', '$password', '$fname', '$lname', '$phone', '$document')";
 
     if ($result > 0) {
         echo "<script>alert('This email or Contact Number already associated with another account');</script>";
@@ -106,17 +100,11 @@ TTTTTTTTTTTT;
 
 //    -----------Login page---------------
 
-//echo "<pre>";print_r($_SESSION);
-
 if (isset($_POST['login'])) {
     $emailcon = $_POST['Userame'];
     $password = md5($_POST['Password']);
     $query = mysqli_query($con, "select * from users where  (UserEmail='$emailcon' || UserPhone='$emailcon') && UserPassword='$password' ");
-
     $ret = mysqli_fetch_array($query);
-
-    //echo "<pre>";print_r($_SESSION);exit;
-
     if ($ret > 0) {
         $_SESSION['user_id'] = $ret['UserID'];
         $_SESSION['firstname'] = $ret['UserFirstName'];
@@ -126,7 +114,6 @@ if (isset($_POST['login'])) {
         echo "<script>alert('Invalid Username and Password');</script>";
     }
 }
-
 ?>
 
 

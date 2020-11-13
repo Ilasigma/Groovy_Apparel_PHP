@@ -4,8 +4,6 @@ include_once('config.php');
 $keyword = $_GET["search"];
 $pageUrl = "?search=".$keyword;
 
-/*echo "<pre>";
-print_r($_GET);*/
 if (isset($_GET['page_no']) && $_GET['page_no'] != "") {
 $page_no = $_GET['page_no'];
 } else {
@@ -21,19 +19,14 @@ $adjacents = "2";
 $result_count = mysqli_query($con, "SELECT COUNT(*) As total_records FROM products WHERE ProductName like '%" . $keyword . "%' OR ProductSKU like '%" . $keyword . "%'");
 $total_records = mysqli_fetch_array($result_count);
 
-//echo "<pre>";print_r($total_records);exit;
 
 $total_records = $total_records['total_records'];////34
 $total_no_of_pages = ceil($total_records / $total_records_per_page);
 $second_last = $total_no_of_pages - 1; // total page minus 1
 
-echo "SELECT * FROM products WHERE ProductName like '%" . $keyword . "%' OR ProductSKU like '%" . $keyword . "%' LIMIT $offset, $total_records_per_page";
-
 if (!empty($keyword)) {
 	$query = mysqli_query($con, "SELECT * FROM products WHERE ProductName like '%" . $keyword . "%' OR ProductSKU like '%" . $keyword . "%' LIMIT $offset, $total_records_per_page");
 }
-
-//echo "SELECT * FROM products WHERE ProductName like '%" . $keyword . "%' OR ProductSKU like '%" . $keyword . "%'"; ;exit;
 ?>
 
 <html lang="zxx">
